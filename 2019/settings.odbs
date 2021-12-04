@@ -1,0 +1,7 @@
+main_file = "src/"
+app_name = "aoc-2019"
+use_resource = false
+resource_path = ""
+files_to_move = []
+files_to_delete = []
+collection_names = []
