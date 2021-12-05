@@ -30,7 +30,7 @@ read_day_input_to_string :: proc(day: string) -> string {
 }
 
 
-read_day_input_to_integer_slice :: proc(day: string) -> []int {
+read_day_input_to_integer_slice :: proc(day: string, base := 0) -> []int {
     path := fmt.tprintf("./input/day%v.txt", day)
     data, ok := os.read_entire_file(path)
     if ok != true {
@@ -41,7 +41,7 @@ read_day_input_to_integer_slice :: proc(day: string) -> []int {
     lines := strings.split(string(data), "\n")
     numbers := make([]int, len(lines))
     for l, idx in lines {
-        x, _ := strconv.parse_int(l)
+        x, _ := strconv.parse_int(l, base)
         numbers[idx] = x
     }
 
